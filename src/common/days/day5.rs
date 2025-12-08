@@ -1,4 +1,4 @@
-use std::{collections::BTreeSet, ops::RangeInclusive};
+use std::ops::RangeInclusive;
 use std::cmp;
 
 type Range64 = RangeInclusive::<u64>;
@@ -65,7 +65,6 @@ pub fn reduce_ranges(mut ranges: Vec<Range64>) -> Vec<Range64> {
 }
 
 pub fn part2(input: &str) -> anyhow::Result<()> {
-    let mut count = 0;
     let (ranges, _) = parse_input(input);
     let reduced_ranges = reduce_ranges(ranges);
     let count : u64  = reduced_ranges.iter().map(|range| range.end() - range.start() + 1).sum();
@@ -90,7 +89,6 @@ fn test_part1() {
 #[test]
 fn test_part2() {
     let input = "3-5\n10-14\n16-20\n12-18\n\n1\n5\n8\n11\n17\n32";
-    let mut count = 0;
     let (ranges, _) = parse_input(input);
     let reduced_ranges = reduce_ranges(ranges);
     let count : u64  = reduced_ranges.iter().map(|range| range.end() - range.start() + 1).sum();
