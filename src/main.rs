@@ -15,7 +15,7 @@ struct Args {
     part: u8,
 }
 
-fn main() -> Result<()> {
+fn main() -> Result<(), anyhow::Error> {
     let args = Args::parse();
 
     let day = args.day;
@@ -37,7 +37,9 @@ fn main() -> Result<()> {
 
     let solver = get_solver(day, part)?;
 
-    return solver(&contents);
+    return solver(&contents).map(|_| {
+        ()
+    });
 
     // Ok(())
 }

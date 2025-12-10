@@ -110,8 +110,7 @@ pub fn part2(input: &str) -> anyhow::Result<()> {
 
 #[test]
 fn test_part1() {
-    let file = format!("data/test-day7.txt");
-    let input = common::get_input(&file).unwrap();
+    let input = include_str!("../../../data/test-day7.txt");
     let lines = parse_input(&input);
 
     let result = count_splits(lines);
@@ -122,8 +121,7 @@ fn test_part1() {
 
 #[test]
 fn test_part2() {
-    let file = format!("data/test-day7.txt");
-    let input = common::get_input(&file).unwrap();
+    let input = include_str!("../../../data/test-day7.txt");
     let lines = parse_input(&input);
 
     let result = count_timelines(lines);
