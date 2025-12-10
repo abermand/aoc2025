@@ -20,6 +20,7 @@ lazy_static! {
         m.insert(6, (days::day6::part1, days::day6::part2));
         m.insert(7, (days::day7::part1, days::day7::part2));
         m.insert(8, (days::day8::part1, days::day8::part2));
+        m.insert(9, (days::day9::part1, days::day9::part2));
         // m.insert(12, (days::day12::part1, days::day12::part2));
         m
     };
